@@ -12,6 +12,10 @@
     "slackkey": {
       "description": "Slack bot user API token",
       "value": ""
+    },
+    "dashbotkey": {
+      "description": "dashbot user API token",
+      "value": ""
     }
   }
 }
