@@ -1,3 +1,7 @@
+This is a fork of [api-ai/api-ai-slack-bot](https://github.com/api-ai/api-ai-slack-bot) with integration of [dashbot](https://www.dashbot.io/).
+
+[Dashbot Reference Docs](https://www.dashbot.io/docs/slack/botkit) and [Live Person Takeover Integration](https://www.dashbot.io/docs/slack/pause)
+
 # Api.ai Slack Integration
 
 ## Overview
@@ -12,11 +16,13 @@ Api.ai documentation:
 
 - [How to create an Api.ai agent](https://docs.api.ai/docs/get-started#step-1-create-agent)
 - [How to obtain Api.ai authentication keys](https://docs.api.ai/docs/authentication)
+- [How to create a dashbot api key](https://www.dashbot.io/bots)
 
-You’ll need 2 keys:
+You’ll need 3 keys:
 
 - Client access token for Api.ai
 - Slack bot API token
+- Dashbot API key
 
 To obtain a Slack bot API token, create a new bot integration here: https://slack.com/apps/A0F7YS25R-bots.
 
@@ -30,6 +36,7 @@ To launch the bot, use one of the following commands:
 docker run -d --name slack_bot \
            -e accesstoken="api.ai access key" \
            -e slackkey="slack bot key" \
+           -e dashbotkey="dashbot key" \
            speaktoit/api-ai-slack-bot
 ```
 
@@ -39,6 +46,7 @@ docker run -d --name slack_bot \
 docker run -it --name slack_bot \
            -e accesstoken="Api.ai client access key" \
            -e slackkey="Slack bot user key" \
+           -e dashbotkey="Dashbot key" \
            speaktoit/api-ai-slack-bot
 ```
 
@@ -66,6 +74,7 @@ If you want to customize your bot behavior, follow the steps below.
 docker run -d --name slack_bot \
            -e accesstoken="Api.ai client token" \
            -e slackkey="Slack bot user key" \
+           -e dashbotkey="Dashbot key" \
            -v /full/path/to/your/src:/usr/app/src \
            speaktoit/api-ai-slack-bot
 ```
